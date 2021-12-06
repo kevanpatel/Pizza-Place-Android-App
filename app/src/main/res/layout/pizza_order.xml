@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+                android:layout_width="221dp"
+                android:layout_height="184dp"
+                android:id="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.084" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.047"/>
+        <Spinner
+                android:layout_width="140dp"
+                android:layout_height="31dp" android:id="@+id/sizeSelect"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.11" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.94"/>
+        <RadioGroup
+                android:layout_width="138dp"
+                android:layout_height="182dp"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.381" app:layout_constraintVertical_bias="0.394">
+            <RadioButton
+                    android:text="Pineapple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp" android:id="@+id/pineappleButton"/>
+            <RadioButton
+                    android:text="Ham"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp" android:id="@+id/hamButton"/>
+            <RadioButton
+                    android:text="Pepperoni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp" android:id="@+id/pepperoniButton"/>
+            <RadioButton
+                    android:text="Sausage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp" android:id="@+id/sausageButton"/>
+            <RadioButton
+                    android:text="Pepper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp" android:id="@+id/radioButton6"/>
+            <RadioButton
+                    android:text="Mushroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp" android:id="@+id/mushroomButton"/>
+            <RadioButton
+                    android:text="Onion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp" android:id="@+id/onionButton"/>
+            <RadioButton
+                    android:text="Black Olives"
+                    android:layout_width="match_parent"
+                    android:layout_height="23dp" android:id="@+id/blackOlivesButton"/>
+        </RadioGroup>
+        <TextView
+                android:text="TextView"
+                android:layout_width="184dp"
+                android:layout_height="23dp" android:id="@+id/textView"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.159" app:layout_constraintVertical_bias="0.758"/>
+        <Button
+                android:text="Add To Order"
+                android:layout_width="129dp"
+                android:layout_height="52dp" android:id="@+id/addPizzaButton"
+                app:backgroundTint="#00BCD4" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.826"
+                app:layout_constraintVertical_bias="0.771"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
