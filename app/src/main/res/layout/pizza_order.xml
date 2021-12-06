@@ -3,113 +3,182 @@
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <CheckBox
-                android:text="Black Olives"
-                android:layout_width="109dp"
-                android:layout_height="25dp" android:id="@+id/blackOlivesButton"
-                android:layout_marginTop="1dp"
-                app:layout_constraintTop_toBottomOf="@+id/onionButton" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.0" app:layout_constraintStart_toEndOf="@+id/sausageButton"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"/>
+            android:id="@+id/blackOlivesButton"
+            android:layout_width="109dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="1dp"
+            android:onClick="counter"
+            android:text="Black Olives"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/sausageButton"
+            app:layout_constraintTop_toBottomOf="@+id/onionButton"
+            app:layout_constraintVertical_bias="0.0" />
+
         <CheckBox
-                android:text="Onion"
-                android:layout_width="109dp"
-                android:layout_height="25dp" android:id="@+id/onionButton"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.453" app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintTop_toBottomOf="@+id/mushroomButton"
-                app:layout_constraintStart_toEndOf="@+id/pepperoniButton"/>
+            android:id="@+id/onionButton"
+            android:layout_width="109dp"
+            android:layout_height="25dp"
+            android:onClick="counter"
+            android:text="Onion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toEndOf="@+id/pepperoniButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mushroomButton"
+            app:layout_constraintVertical_bias="0.0" />
+
         <CheckBox
-                android:text="Pepperoni"
-                android:layout_width="109dp"
-                android:layout_height="25dp" android:id="@+id/pepperoniButton"
-                app:layout_constraintTop_toBottomOf="@+id/hamButton"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.092"
-                app:layout_constraintVertical_bias="0.0"/>
+            android:id="@+id/pepperoniButton"
+            android:layout_width="109dp"
+            android:layout_height="25dp"
+            android:onClick="counter"
+            android:text="Pepperoni"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.092"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hamButton"
+            app:layout_constraintVertical_bias="0.0" />
+
         <CheckBox
-                android:text="Ham"
-                android:layout_width="109dp"
-                android:layout_height="25dp" android:id="@+id/hamButton"
-                android:layout_marginTop="4dp"
-                app:layout_constraintTop_toBottomOf="@+id/pineappleButton" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.0" app:layout_constraintHorizontal_bias="0.092"/>
+            android:id="@+id/hamButton"
+            android:layout_width="109dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:onClick="counter"
+            android:text="Ham"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.092"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pineappleButton"
+            app:layout_constraintVertical_bias="0.0" />
+
         <CheckBox
-                android:text="Mushroom"
-                android:layout_width="109dp"
-                android:layout_height="25dp" android:id="@+id/mushroomButton"
-                android:layout_marginTop="100dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.0" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.453" app:layout_constraintTop_toBottomOf="@+id/pizzaImage"
-                app:layout_constraintStart_toEndOf="@+id/hamButton"/>
+            android:id="@+id/mushroomButton"
+            android:layout_width="109dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="100dp"
+            android:onClick="counter"
+            android:text="Mushroom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toEndOf="@+id/hamButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pizzaImage"
+            app:layout_constraintVertical_bias="0.0" />
+
         <CheckBox
-                android:text="Pineapple"
-                android:layout_width="109dp"
-                android:layout_height="25dp" android:id="@+id/pineappleButton"
-                android:layout_marginTop="72dp"
-                app:layout_constraintTop_toBottomOf="@+id/pizzaImage" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.092"/>
+            android:id="@+id/pineappleButton"
+            android:layout_width="109dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="72dp"
+            android:onClick="counter"
+            android:text="Pineapple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.092"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pizzaImage" />
+
         <CheckBox
-                android:text="Sausage"
-                android:layout_width="111dp"
-                android:layout_height="32dp" android:id="@+id/sausageButton"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.08" app:layout_constraintTop_toTopOf="@+id/pepperoniButton"
-                app:layout_constraintHorizontal_bias="0.093"/>
+            android:id="@+id/sausageButton"
+            android:layout_width="111dp"
+            android:layout_height="32dp"
+            android:onClick="counter"
+            android:text="Sausage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.093"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/pepperoniButton"
+            app:layout_constraintVertical_bias="0.08" />
+
         <ImageView
-                android:layout_width="221dp"
-                android:layout_height="184dp"
-                android:id="@+id/pizzaImage"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.131" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.184"/>
+            android:id="@+id/pizzaImage"
+            android:layout_width="221dp"
+            android:layout_height="184dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.184" />
+
         <Spinner
-                android:layout_width="140dp"
-                android:layout_height="31dp" android:id="@+id/sizeSelect"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.258" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.94"
-                app:layout_constraintStart_toEndOf="@+id/imageView2" android:layout_marginLeft="9dp"
-                android:layout_marginStart="9dp"/>
+            android:id="@+id/sizeSelect"
+            android:layout_width="140dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:addStatesFromChildren="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.94"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.258" />
+
         <TextView
-                android:text="TextView"
-                android:layout_width="184dp"
-                android:layout_height="23dp" android:id="@+id/textView"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.159" app:layout_constraintVertical_bias="0.758"/>
+            android:id="@+id/textView"
+            android:layout_width="184dp"
+            android:layout_height="23dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.159"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.758" />
+
         <Button
-                android:text="Add To Order"
-                android:layout_width="129dp"
-                android:layout_height="52dp" android:id="@+id/addPizzaButton"
-                app:backgroundTint="#00BCD4" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.826"
-                app:layout_constraintVertical_bias="0.771"/>
+            android:id="@+id/addPizzaButton"
+            android:layout_width="129dp"
+            android:layout_height="52dp"
+            android:text="Add To Order"
+            app:backgroundTint="#00BCD4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.826"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.771" />
+
         <CheckBox
-                android:text="Pepper"
-                android:layout_width="109dp"
-                android:layout_height="25dp" android:id="@+id/pepperButton"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.007"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.453" android:layout_marginTop="72dp"
-                app:layout_constraintTop_toBottomOf="@+id/pizzaImage"
-                app:layout_constraintStart_toEndOf="@+id/pineappleButton"/>
+            android:id="@+id/pepperButton"
+            android:layout_width="109dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="72dp"
+            android:onClick="counter"
+            android:text="Pepper"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toEndOf="@+id/pineappleButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pizzaImage"
+            app:layout_constraintVertical_bias="0.007" />
+
         <TextView
-                android:text="Pizza Order"
-                android:layout_width="194dp"
-                android:layout_height="54dp" android:id="@+id/textView9"
-                android:textSize="34sp" android:layout_marginBottom="9dp"
-                app:layout_constraintBottom_toTopOf="@+id/imageView2" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/textView9"
+            android:layout_width="194dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="9dp"
+            android:text="Pizza Order"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
