@@ -10,42 +10,45 @@
             android:text="Order Deluxe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/deluxeView"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.212" app:layout_constraintVertical_bias="0.396"/>
+            app:layout_constraintHorizontal_bias="0.218" app:layout_constraintVertical_bias="1.0"
+            android:layout_marginBottom="18dp" app:layout_constraintBottom_toTopOf="@+id/orderHawaiianButton"/>
     <ImageButton
             android:background="@drawable/deluxepizza"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.09" android:layout_height="172dp" android:layout_width="213dp"
-            app:layout_constraintVertical_bias="0.196" android:id="@+id/orderDeluxeButton"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08" android:layout_height="172dp" android:layout_width="213dp"
+            app:layout_constraintVertical_bias="1.0" android:id="@+id/orderDeluxeButton"
+            app:layout_constraintBottom_toTopOf="@+id/deluxeView"/>
     <ImageButton
             android:background="@drawable/hawaiianpizza"
             android:layout_height="147dp"
             android:layout_width="203dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.115"
-            app:layout_constraintVertical_bias="0.542" android:id="@+id/orderHawaiianButton"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintVertical_bias="1.0" android:id="@+id/orderHawaiianButton"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"/>
     <ImageButton
             android:background="@drawable/pepperonipizza"
             android:layout_height="154dp"
             android:layout_width="209dp" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.089"
-            app:layout_constraintVertical_bias="0.942" android:id="@+id/orderPepperoniButton"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.079"
+            app:layout_constraintVertical_bias="0.939" android:id="@+id/orderPepperoniButton"/>
     <ImageButton
             android:background="@drawable/shoppingcartimage"
             android:id="@+id/currentOrderButton"
             android:layout_height="128dp" android:layout_width="158dp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.94"
-            app:layout_constraintVertical_bias="0.373"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.972"
+            app:layout_constraintVertical_bias="0.487"/>
     <ImageButton
             android:background="@drawable/pizzastoreimage"
             android:id="@+id/storeOrderButton"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.94" app:layout_constraintVertical_bias="0.711"
+            app:layout_constraintHorizontal_bias="0.972" app:layout_constraintVertical_bias="0.787"
             android:layout_height="142dp" android:layout_width="158dp"/>
     <TextView
             android:text="RU Pizzeria"
@@ -54,17 +57,16 @@
             android:gravity="center"
             android:layout_width="411dp"
             android:layout_height="73dp" android:id="@+id/textView3"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toTopOf="@+id/orderDeluxeButton"/>
     <TextView
             android:text="Order Hawaiian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView4"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.222"
-            app:layout_constraintVertical_bias="0.651"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.178"
+            app:layout_constraintVertical_bias="1.0" android:layout_marginBottom="21dp"
+            app:layout_constraintBottom_toTopOf="@+id/orderPepperoniButton"/>
     <TextView
             android:text="Order Pepperoni"
             android:layout_width="wrap_content"
@@ -78,19 +80,33 @@
             android:layout_height="wrap_content" android:id="@+id/textView6"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.839" app:layout_constraintVertical_bias="0.495"/>
+            app:layout_constraintHorizontal_bias="0.88" app:layout_constraintVertical_bias="0.592"/>
     <TextView
             android:text="Store Orders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView7"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.806"
-            app:layout_constraintVertical_bias="0.787"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.845"
+            app:layout_constraintVertical_bias="0.851"/>
     <TextView
-            android:text="TextView"
+            android:text="Customer Phone Number:"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView8" tools:layout_editor_absoluteY="79dp"
-            tools:layout_editor_absoluteX="91dp"/>
+            android:layout_height="wrap_content" android:id="@+id/textView8"
+            android:layout_marginBottom="44dp"
+            app:layout_constraintBottom_toTopOf="@+id/orderDeluxeButton" android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.936"
+            app:layout_constraintVertical_bias="0.0"/>
+    <EditText
+            android:layout_width="116dp"
+            android:layout_height="55dp"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/phoneNumber"
+            app:layout_constraintStart_toEndOf="@+id/orderDeluxeButton" android:layout_marginBottom="72dp"
+            app:layout_constraintBottom_toTopOf="@+id/currentOrderButton" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:layout_constraintHorizontal_bias="0.387" app:layout_constraintVertical_bias="0.571"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
