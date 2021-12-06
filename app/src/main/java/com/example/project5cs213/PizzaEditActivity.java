@@ -207,7 +207,10 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         // Put the String to pass back into an Intent and close this activity
         Intent intent = new Intent();
         intent.putExtra("curPizza",  curPizza);
+        Toast.makeText(getApplicationContext(),getApplicationContext().getString(R.string.order_added) ,Toast.LENGTH_SHORT).show();
         setResult(RESULT_OK, intent);
+
+
         finish();
     }
 //
