@@ -18,13 +18,15 @@ import java.util.List;
 public class OrderActivity extends AppCompatActivity {
 
     private ListView orderListView;
-    private Order order;
+    private static Order order;
 
     private TextView subtotal;
     private TextView salesTaxLabel;
     private TextView ordertotal;
     private TextView orderCustomerNumberView;
 
+    private static final int updatecode = 9;
+    private static final int paycode = 10;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +74,22 @@ public class OrderActivity extends AppCompatActivity {
                 salesTaxLabel.setText(String.format("%,.2f", order.getSalesTax()));
                 ordertotal.setText(String.format("%,.2f", order.getOrderTotal()));
 
+
             }
         });
     }
+
+    public void updateOrder(View view) {
+
+
+
+        // Put the String to pass back into an Intent and close this activity
+        Intent intent = new Intent();
+        intent.putExtra("curOrder",  order);
+        setResult(updatecode, intent);
+        finish();
+    }
+
 
     public void onButtonClick(View view) {
 
@@ -83,7 +98,7 @@ public class OrderActivity extends AppCompatActivity {
         // Put the String to pass back into an Intent and close this activity
         Intent intent = new Intent();
         intent.putExtra("curOrder",  order);
-        setResult(RESULT_OK, intent);
+        setResult(paycode, intent);
         finish();
     }
 }

@@ -12,16 +12,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int PIZZAEDIT_ACTIVITY_REQUEST_CODE = 0;
     private static final int ORDERACTIVITY_ACTIVITY_REQUEST_CODE = 1;
 
+    private static final int updatecode = 9;
+    private static final int paycode = 10;
 
     private EditText editTextPhone;
 
-    private static Order curOrder = new Order();
+    private  Order curOrder = new Order();
     private static StoreOrders storeOrders = new StoreOrders();
+    protected ArrayList<Order> unpaidOrders = new ArrayList<Order>();
 
     private static Pizza curPizza;
     private static int curPhoneNumber;
@@ -87,28 +93,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCurrentOrderClick(View view){
 
-        if(curOrder== null|| curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
+        if(unpaidOrders== null){
 
-            curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
-            curOrder=new Order();
-            curOrder.setPhoneNumber(editTextPhone.getText().toString());
-            Toast.makeText(getApplicationContext(),"No pizza selected" ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"No current orders" ,Toast.LENGTH_SHORT).show();
             return;
 
         }
-        else if(!numberChecker(editTextPhone.getText().toString())){
-        }
         else {
-            curPhoneNumber=  Integer.parseInt(editTextPhone.getText().toString());
 
-            Intent intent = new Intent(this, OrderActivity.class);
-            intent.putExtra("curOrder", curOrder);
-            intent.putExtra("phoneNumber", curPhoneNumber);
+            for(Order o : unpaidOrders){
+                if(o.getPhoneNumber().equals(editTextPhone.getText().toString())){
+                    Intent intent = new Intent(this, OrderActivity.class);
 
-            if(editTextPhone.getText()!=null){
-                if(numberChecker(editTextPhone.getText().toString()))
-                    startActivityForResult(intent, ORDERACTIVITY_ACTIVITY_REQUEST_CODE);
+
+                    intent.putExtra("curOrder", o);
+                    intent.putExtra("phoneNumber", o.getPhoneNumber());
+                            startActivityForResult(intent, ORDERACTIVITY_ACTIVITY_REQUEST_CODE);
+
+                    return;
+                }
             }
+            Toast.makeText(getApplicationContext(),"No matching orders" ,Toast.LENGTH_SHORT).show();
+
+
         }
 
     }
@@ -135,13 +142,79 @@ public class MainActivity extends AppCompatActivity {
                 // Get String data from Intent
                 curPizza = (Pizza) data.getSerializableExtra("curPizza");
                 curOrder.add(curPizza);
+                curOrder.setPhoneNumber(editTextPhone.getText().toString());
+                if(unpaidOrders.isEmpty()){
+                    unpaidOrders.add(curOrder);
+
+                }
+//                for(Order o:unpaidOrders){
+//                    if(o.getPhoneNumber().equals(curOrder.getPhoneNumber())){
+//                        unpaidOrders.remove(o);
+//                        unpaidOrders.add(curOrder);
+//                        Toast.makeText(getApplicationContext(),"Order added" + o.getPhoneNumber(),Toast.LENGTH_SHORT).show();
+//
+//                    }
+//
+//                }
+                Iterator<Order> iterator = unpaidOrders.iterator();
+                while(iterator.hasNext()){
+                    Order order = iterator.next();
+
+                    if(order.getPhoneNumber().equals(curOrder.getPhoneNumber())){
+                        iterator.remove();
+                        unpaidOrders.add(curOrder);
+                        Toast.makeText(getApplicationContext(),"Order added" + order.getPhoneNumber(),Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+
+                if(unpaidOrders.contains(curOrder)==false){
+                    unpaidOrders.add(curOrder);
+                }
+
+           //     Toast.makeText(getApplicationContext(),"Order added" ,Toast.LENGTH_SHORT).show();
+
 
             }
+
         }
         if (requestCode == ORDERACTIVITY_ACTIVITY_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
+            if (resultCode == updatecode) {
 
                 // Get String data from Intent
+                curOrder = (Order) data.getSerializableExtra("curOrder");
+                if(unpaidOrders.isEmpty()){
+                    unpaidOrders.add(curOrder);
+
+                }
+//                for(Order o:unpaidOrders){
+//                    if(o.getPhoneNumber().equals(curOrder.getPhoneNumber())){
+//                        unpaidOrders.remove(o);
+//                        unpaidOrders.add(curOrder);
+//                        Toast.makeText(getApplicationContext(),"Order added" + o.getPhoneNumber(),Toast.LENGTH_SHORT).show();
+//
+//                    }
+//
+//                }
+                Iterator<Order> iterator = unpaidOrders.iterator();
+                while(iterator.hasNext()){
+                    Order order = iterator.next();
+
+                    if(order.getPhoneNumber().equals(curOrder.getPhoneNumber())){
+                        iterator.remove();
+                        unpaidOrders.add(curOrder);
+                        Toast.makeText(getApplicationContext(),"Order added" + order.getPhoneNumber(),Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+
+                if(unpaidOrders.contains(curOrder)==false){
+                    unpaidOrders.add(curOrder);
+                }
+
+
+            }
+            if(resultCode==paycode){
                 curOrder = (Order) data.getSerializableExtra("curOrder");
                 storeOrders.addOrder(curOrder);
             }
