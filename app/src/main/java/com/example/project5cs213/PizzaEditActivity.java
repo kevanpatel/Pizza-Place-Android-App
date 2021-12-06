@@ -30,7 +30,7 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
 
     private Spinner sizeSelect;
 
-    String[] sizes={"Small","Medium","large"};
+    String[] sizes={"Small","Medium","Large"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
