@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onDeluxeClick(View view){
+        if(curOrder== null || curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
+            curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
+            curOrder=new Order();
+            curOrder.setPhoneNumber(editTextPhone.getText().toString());
+        }
+
         Intent intent = new Intent(this, PizzaEditActivity.class);
         String pizzaType = "deluxe";
         intent.putExtra("PIZZA", pizzaType);
@@ -49,16 +55,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onHawaiianClick(View view){
+        if(curOrder== null|| curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
+            curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
+            curOrder=new Order();
+            curOrder.setPhoneNumber(editTextPhone.getText().toString());
+        }
         Intent intent = new Intent(this, PizzaEditActivity.class);
         String pizzaType = "hawaiian";
         intent.putExtra("PIZZA", pizzaType);
-        if(editTextPhone.getText()!=null){
-            if(numberChecker(editTextPhone.getText().toString()))
+        if(editTextPhone.getText()!=null) {
+            if (numberChecker(editTextPhone.getText().toString()))
                 startActivityForResult(intent, PIZZAEDIT_ACTIVITY_REQUEST_CODE);
         }
-    }
+        }
+
 
     public void onPepperoniClick(View view){
+        if(curOrder== null|| curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
+            curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
+            curOrder=new Order();
+            curOrder.setPhoneNumber(editTextPhone.getText().toString());
+        }
         Intent intent = new Intent(this, PizzaEditActivity.class);
         String pizzaType = "pepperoni";
         intent.putExtra("PIZZA", pizzaType);
@@ -70,13 +87,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCurrentOrderClick(View view){
 
-        if(curOrder==null){
+        if(curOrder== null|| curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
+
+            curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
+            curOrder=new Order();
+            curOrder.setPhoneNumber(editTextPhone.getText().toString());
             Toast.makeText(getApplicationContext(),"No pizza selected" ,Toast.LENGTH_SHORT).show();
+            return;
 
         }
         else if(!numberChecker(editTextPhone.getText().toString())){
         }
-        else{
+        else {
             curPhoneNumber=  Integer.parseInt(editTextPhone.getText().toString());
 
             Intent intent = new Intent(this, OrderActivity.class);
