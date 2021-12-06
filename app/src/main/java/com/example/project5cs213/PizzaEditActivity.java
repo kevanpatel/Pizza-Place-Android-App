@@ -29,7 +29,6 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
     private CheckBox Sausage;
 
     private Spinner sizeSelect;
-    private int count=0;
 
     String[] sizes={"Small","Medium","large"};
 
@@ -83,46 +82,34 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         }
     }
     public void counter(View view) {
+        int count=0;
         if (Pepperoni.isChecked()) {
             count++;
-
         }
+
         if (Onion.isChecked()) {
             count++;
-        }else{
-            count--;
         }
         if (Pepper.isChecked()) {
             count++;
-        }else{
-            count--;
+
         }
         if (Sausage.isChecked()) {
             count++;
-        }else{
-            count--;
         }
         if (Mushroom.isChecked()) {
             count++;
-        }else{
-            count--;
         }
         if (BlackOlives.isChecked()) {
             count++;
-        }else{
-            count--;
         }
         if (Ham.isChecked()) {
             count++;
-        }else{
-            count--;
         }
         if (Pineapple.isChecked()) {
             count++;
-        }else{
-            count--;
         }
-        if(count>7){
+        if(count>=7){
             if(!Pineapple.isChecked()){
                 Pineapple.setEnabled(false);
             }
@@ -145,7 +132,7 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
                 Sausage.setEnabled(false);
             }
             if (!Pepper.isChecked()){
-                Ham.setEnabled(false);
+                Pepper.setEnabled(false);
             }
         }
         else {
@@ -166,6 +153,7 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         Toast.makeText(getApplicationContext(), sizes[i], Toast.LENGTH_LONG).show();
+        counter(view);
 
     }
 
