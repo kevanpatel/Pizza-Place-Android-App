@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onDeluxeClick(View view){
+        if(editTextPhone.getText().toString().equals("") ||editTextPhone.getText().toString().length()!=10 ){
+            Toast.makeText(getApplicationContext(),getApplicationContext().getString(R.string.invalid_Number) ,Toast.LENGTH_SHORT).show();
+            return;
+
+        }
         if(curOrder== null || curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
             curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
             curOrder=new Order();
@@ -61,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onHawaiianClick(View view){
+        if(editTextPhone.getText().toString().equals("") ||editTextPhone.getText().toString().length()!=10 ){
+            Toast.makeText(getApplicationContext(),getApplicationContext().getString(R.string.invalid_Number) ,Toast.LENGTH_SHORT).show();
+            return;
+
+        }
         if(curOrder== null|| curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
             curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
             curOrder=new Order();
@@ -77,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onPepperoniClick(View view){
+        if(editTextPhone.getText().toString().equals("") ||editTextPhone.getText().toString().length()!=10 ){
+            Toast.makeText(getApplicationContext(),getApplicationContext().getString(R.string.invalid_Number) ,Toast.LENGTH_SHORT).show();
+            return;
+
+        }
         if(curOrder== null|| curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
             curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
             curOrder=new Order();
@@ -95,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(unpaidOrders== null){
 
-            Toast.makeText(getApplicationContext(),"No current orders" ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),getApplicationContext().getString(R.string.no_existing_orders),Toast.LENGTH_SHORT).show();
             return;
 
         }
@@ -126,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else {
-            Toast.makeText(getApplicationContext(),"Invalid Phone Number " + num.length(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),getApplicationContext().getString((R.string.invalid_Number)),Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -163,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                     if(order.getPhoneNumber().equals(curOrder.getPhoneNumber())){
                         iterator.remove();
                         unpaidOrders.add(curOrder);
-                        Toast.makeText(getApplicationContext(),"Order added" + order.getPhoneNumber(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getApplicationContext().getText(R.string.order_added),Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
@@ -203,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
                     if(order.getPhoneNumber().equals(curOrder.getPhoneNumber())){
                         iterator.remove();
                         unpaidOrders.add(curOrder);
-                        Toast.makeText(getApplicationContext(),"Order added" + order.getPhoneNumber(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getApplicationContext().getText(R.string.order_added),Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }

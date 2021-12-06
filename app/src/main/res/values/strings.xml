@@ -6,4 +6,8 @@
         <item>Medium</item>
         <item>Large</item>
     </string-array>
+
+    <string name="invalid_Number">Please enter Valid Number </string>
+    <string name="no_existing_orders">No Orders exist for that Number </string>
+    <string name="order_added">Order Added Succesfully </string>
 </resources>
