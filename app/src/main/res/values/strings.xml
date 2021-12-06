@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Project 5 Group 32</string>
+
+    <string-array name="sizeNames">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
 </resources>
