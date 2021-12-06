@@ -4,11 +4,16 @@ package com.example.project5cs213;
  * @author Manav Patel
  */
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Pepperoni pizza that extends the pizza class
  */
 
-public class Pepperoni extends Pizza {
+public class Pepperoni extends Pizza implements Serializable {
     /**
      * Creating variables
      */
@@ -67,4 +72,5 @@ public class Pepperoni extends Pizza {
 
         }
     }
+
 }

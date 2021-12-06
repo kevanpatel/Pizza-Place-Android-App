@@ -1,5 +1,9 @@
 package com.example.project5cs213;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * @author Kevan Patel
@@ -10,7 +14,7 @@ import java.util.ArrayList;
  * class that creates and holds order information
  */
 
-public class Order {
+public class Order implements Serializable {
     /**
      * Creating variables
      */
@@ -114,5 +118,6 @@ public class Order {
     public String toString() {
         return "Phone Order Number: " + phoneNumber + "\n" + pizzas.toString();
     }
+
 }
 

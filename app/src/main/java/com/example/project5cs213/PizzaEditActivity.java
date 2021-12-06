@@ -207,7 +207,7 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
 
         // Put the String to pass back into an Intent and close this activity
         Intent intent = new Intent();
-        intent.putExtra("curPizza", (Parcelable) curPizza);
+        intent.putExtra("curPizza",  curPizza);
         setResult(RESULT_OK, intent);
         finish();
     }

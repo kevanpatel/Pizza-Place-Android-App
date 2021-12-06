@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,12 +15,17 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static final int PIZZAEDIT_ACTIVITY_REQUEST_CODE = 0;
+    private static final int ORDERACTIVITY_ACTIVITY_REQUEST_CODE = 1;
 
 
     private EditText editTextPhone;
 
     private static Order curOrder = new Order();
     private static StoreOrders storeOrders = new StoreOrders();
+
+    private static Pizza curPizza;
+    private static int curPhoneNumber;
+
     private static int lengthPhoneNumber=10;
 
     @Override
@@ -60,6 +66,28 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
+    public void onCurrentOrderClick(View view){
+
+        if(curOrder==null){
+            Toast.makeText(getApplicationContext(),"No pizza selected" ,Toast.LENGTH_SHORT).show();
+
+        }
+        else if(!numberChecker(editTextPhone.getText().toString())){
+        }
+        else{
+            curPhoneNumber=  Integer.parseInt(editTextPhone.getText().toString());
+
+            Intent intent = new Intent(this, OrderActivity.class);
+            intent.putExtra("curOrder", curOrder);
+            intent.putExtra("phoneNumber", curPhoneNumber);
+
+            if(editTextPhone.getText()!=null){
+                if(numberChecker(editTextPhone.getText().toString()))
+                    startActivityForResult(intent, ORDERACTIVITY_ACTIVITY_REQUEST_CODE);
+            }
+        }
+    }
+
     public boolean numberChecker(String t){
         String num =  t;
         if(num.length() == 10){
@@ -80,9 +108,17 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
 
                 // Get String data from Intent
-                Pizza returnPizza = data.getParcelableExtra("curPizza");
-                curOrder.add(returnPizza);
-//
+                curPizza = (Pizza) data.getSerializableExtra("curPizza");
+                curOrder.add(curPizza);
+
+            }
+        }
+        if (requestCode == ORDERACTIVITY_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+
+                // Get String data from Intent
+                curOrder = (Order) data.getSerializableExtra("curOrder");
+                storeOrders.addOrder(curOrder);
             }
         }
     }

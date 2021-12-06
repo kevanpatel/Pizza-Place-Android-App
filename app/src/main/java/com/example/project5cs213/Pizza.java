@@ -1,5 +1,8 @@
 package com.example.project5cs213;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * @author Kevan Patel
@@ -10,7 +13,7 @@ import java.util.ArrayList;
  * Defines what a Pizza is
  */
 
-public abstract class Pizza {
+public abstract class Pizza implements Serializable {
     /**
      * initialize variables
      */

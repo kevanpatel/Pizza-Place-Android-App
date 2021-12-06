@@ -144,6 +144,7 @@
             android:id="@+id/addPizzaButton"
             android:layout_width="129dp"
             android:layout_height="52dp"
+            android:onClick="onButtonClick"
             android:text="Add To Order"
             app:backgroundTint="#00BCD4"
             app:layout_constraintBottom_toBottomOf="parent"

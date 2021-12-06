@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PizzaEditActivity"></activity>
+        <activity android:name=".OrderActivity"></activity>
+
     </application>
 
 </manifest>
