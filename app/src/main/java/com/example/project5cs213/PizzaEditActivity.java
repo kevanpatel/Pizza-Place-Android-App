@@ -2,6 +2,7 @@ package com.example.project5cs213;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PizzaEditActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private ImageView pizzaImage;
+    private TextView pizzaPrice;
 
     private CheckBox BlackOlives;
     private CheckBox Ham;
@@ -30,7 +33,18 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
 
     private Spinner sizeSelect;
 
+    private static double roundHundredPlace=100.0;
+    private static double deluxeHolderPrice=12.99;
+    private static double hawaiianHolderPrice=10.99;
+    private static double pepperoniHolderPrice=8.99;
+
+    PizzaMaker pizzaMaker = new PizzaMaker();
+    private String flavour = "Deluxe";
+    Pizza curPizza;
+
+
     String[] sizes={"Small","Medium","Large"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +69,7 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         Pineapple = findViewById(R.id.pineappleButton);
         Sausage = findViewById(R.id.sausageButton);
 
-
+        pizzaPrice = findViewById(R.id.pizzaPrice);
 
 
 
@@ -74,10 +88,13 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
 
 
         if(pizzaType.equals("deluxe")){
+            flavour = "Deluxe";
             pizzaImage.setImageResource(R.drawable.deluxepizza);
         } else if(pizzaType.equals("hawaiian")){
+            flavour = "Pepperoni";
             pizzaImage.setImageResource(R.drawable.hawaiianpizza);
         } else if(pizzaType.equals("pepperoni")){
+            flavour = "Hawaiian";
             pizzaImage.setImageResource(R.drawable.pepperonipizza);
         }
     }
@@ -148,12 +165,67 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
     }
 
 
+    public Pizza addToppings(Pizza pizza) {
+        if (Pepperoni.isChecked()) {
+            pizza.toppings.add(Topping.Pepperoni);
+        }
+        if (Onion.isChecked()) {
+            pizza.toppings.add(Topping.Onion);
+        }
+        if (Pepper.isChecked()) {
+            pizza.toppings.add(Topping.Pepper);
+        }
+        if (Sausage.isChecked()) {
+            pizza.toppings.add(Topping.Sausage);
+        }
+        if (Mushroom.isChecked()) {
+            pizza.toppings.add(Topping.Mushroom);
+        }
+        if (BlackOlives.isChecked()) {
+            pizza.toppings.add(Topping.BlackOlives);
+        }
+        if (Ham.isChecked()) {
+            pizza.toppings.add(Topping.Ham);
 
+        }
+        if (Pineapple.isChecked()) {
+            pizza.toppings.add(Topping.Pineapple);
+        }
+
+        return pizza;
+    }
+
+
+    public void onButtonClick(View view) {
+
+
+
+        // Put the String to pass back into an Intent and close this activity
+        Intent intent = new Intent();
+        intent.putExtra("curPizza", (Parcelable) curPizza);
+        setResult(RESULT_OK, intent);
+        finish();
+    }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(getApplicationContext(), sizes[i], Toast.LENGTH_LONG).show();
-        counter(view);
+        Pizza temp = pizzaMaker.createPizza(this.flavour);
+
+        if(i==0){
+            temp.setSize(Size.small);
+        }
+        if(i==1){
+            temp.setSize(Size.medium);
+        }
+        if(i==2){
+            temp.setSize(Size.large);
+        }
+        addToppings(temp);
+        curPizza= temp;
+        pizzaPrice.setText(String.valueOf(Math.round(temp.price() * roundHundredPlace) / roundHundredPlace));
+
+       // Toast.makeText(getApplicationContext(), sizes[i], Toast.LENGTH_LONG).show();
+        //counter(view);
 
     }
 

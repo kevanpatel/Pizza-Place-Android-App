@@ -12,8 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
+
+    private static final int PIZZAEDIT_ACTIVITY_REQUEST_CODE = 0;
+
+
     private EditText editTextPhone;
+
+    private static Order curOrder = new Order();
+    private static StoreOrders storeOrders = new StoreOrders();
+    private static int lengthPhoneNumber=10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("PIZZA", pizzaType);
         if(editTextPhone.getText()!=null){
             if(numberChecker(editTextPhone.getText().toString()))
-                startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
+                startActivityForResult(intent, PIZZAEDIT_ACTIVITY_REQUEST_CODE);
         }
     }
 
@@ -39,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("PIZZA", pizzaType);
         if(editTextPhone.getText()!=null){
             if(numberChecker(editTextPhone.getText().toString()))
-                startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
+                startActivityForResult(intent, PIZZAEDIT_ACTIVITY_REQUEST_CODE);
         }
     }
 
@@ -49,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("PIZZA", pizzaType);
         if(editTextPhone.getText()!=null){
         if(numberChecker(editTextPhone.getText().toString()))
-            startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
+            startActivityForResult(intent, PIZZAEDIT_ACTIVITY_REQUEST_CODE);
             }
     }
 
@@ -65,7 +72,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        // Check that it is the SecondActivity with an OK result
+        if (requestCode == PIZZAEDIT_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+
+                // Get String data from Intent
+                Pizza returnPizza = data.getParcelableExtra("curPizza");
+                curOrder.add(returnPizza);
+
+            }
+        }
     }
 }
