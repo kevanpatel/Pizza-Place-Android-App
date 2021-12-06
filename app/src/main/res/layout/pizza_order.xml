@@ -6,6 +6,64 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+        <CheckBox
+                android:text="Black Olives"
+                android:layout_width="109dp"
+                android:layout_height="25dp" android:id="@+id/blackOlivesButton"
+                android:layout_marginTop="1dp"
+                app:layout_constraintTop_toBottomOf="@+id/onionButton" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0" app:layout_constraintStart_toEndOf="@+id/sausageButton"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"/>
+        <CheckBox
+                android:text="Onion"
+                android:layout_width="109dp"
+                android:layout_height="25dp" android:id="@+id/onionButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.453" app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/mushroomButton"
+                app:layout_constraintStart_toEndOf="@+id/pepperoniButton"/>
+        <CheckBox
+                android:text="Pepperoni"
+                android:layout_width="109dp"
+                android:layout_height="25dp" android:id="@+id/pepperoniButton"
+                app:layout_constraintTop_toBottomOf="@+id/hamButton"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.092"
+                app:layout_constraintVertical_bias="0.0"/>
+        <CheckBox
+                android:text="Ham"
+                android:layout_width="109dp"
+                android:layout_height="25dp" android:id="@+id/hamButton"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/pineappleButton" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0" app:layout_constraintHorizontal_bias="0.092"/>
+        <CheckBox
+                android:text="Mushroom"
+                android:layout_width="109dp"
+                android:layout_height="25dp" android:id="@+id/mushroomButton"
+                android:layout_marginTop="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.0" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453" app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/hamButton"/>
+        <CheckBox
+                android:text="Pineapple"
+                android:layout_width="109dp"
+                android:layout_height="25dp" android:id="@+id/pineappleButton"
+                android:layout_marginTop="72dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.092"/>
+        <CheckBox
+                android:text="Sausage"
+                android:layout_width="109dp"
+                android:layout_height="25dp" android:id="@+id/sausageButton"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.067" app:layout_constraintTop_toTopOf="@+id/pepperoniButton"
+                app:layout_constraintHorizontal_bias="0.092"/>
         <ImageView
                 android:layout_width="221dp"
                 android:layout_height="184dp"
@@ -20,45 +78,6 @@
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.11" app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.94"/>
-        <RadioGroup
-                android:layout_width="138dp"
-                android:layout_height="182dp"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintHorizontal_bias="0.381" app:layout_constraintVertical_bias="0.394">
-            <RadioButton
-                    android:text="Pineapple"
-                    android:layout_width="wrap_content"
-                    android:layout_height="21dp" android:id="@+id/pineappleButton"/>
-            <RadioButton
-                    android:text="Ham"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp" android:id="@+id/hamButton"/>
-            <RadioButton
-                    android:text="Pepperoni"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp" android:id="@+id/pepperoniButton"/>
-            <RadioButton
-                    android:text="Sausage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp" android:id="@+id/sausageButton"/>
-            <RadioButton
-                    android:text="Pepper"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp" android:id="@+id/radioButton6"/>
-            <RadioButton
-                    android:text="Mushroom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="19dp" android:id="@+id/mushroomButton"/>
-            <RadioButton
-                    android:text="Onion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp" android:id="@+id/onionButton"/>
-            <RadioButton
-                    android:text="Black Olives"
-                    android:layout_width="match_parent"
-                    android:layout_height="23dp" android:id="@+id/blackOlivesButton"/>
-        </RadioGroup>
         <TextView
                 android:text="TextView"
                 android:layout_width="184dp"
@@ -74,5 +93,14 @@
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.826"
                 app:layout_constraintVertical_bias="0.771"/>
+        <CheckBox
+                android:text="Pepper"
+                android:layout_width="109dp"
+                android:layout_height="25dp" android:id="@+id/pepperButton"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.007"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.453" android:layout_marginTop="72dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/pineappleButton"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
