@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 // Get String data from Intent
                 Pizza returnPizza = data.getParcelableExtra("curPizza");
                 curOrder.add(returnPizza);
-
+//
             }
         }
     }
