@@ -34,9 +34,6 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
     private Spinner sizeSelect;
 
     private static double roundHundredPlace=100.0;
-    private static double deluxeHolderPrice=12.99;
-    private static double hawaiianHolderPrice=10.99;
-    private static double pepperoniHolderPrice=8.99;
 
     PizzaMaker pizzaMaker = new PizzaMaker();
     private String flavour = "Deluxe";
@@ -90,12 +87,20 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         if(pizzaType.equals("deluxe")){
             flavour = "Deluxe";
             pizzaImage.setImageResource(R.drawable.deluxepizza);
+            Pepperoni.setChecked(true);
+            Onion.setChecked(true);
+            Pepper.setChecked(true);
+            Sausage.setChecked(true);
+            Mushroom.setChecked(true);
         } else if(pizzaType.equals("hawaiian")){
-            flavour = "Pepperoni";
-            pizzaImage.setImageResource(R.drawable.hawaiianpizza);
-        } else if(pizzaType.equals("pepperoni")){
             flavour = "Hawaiian";
+            pizzaImage.setImageResource(R.drawable.hawaiianpizza);
+            Ham.setChecked(true);
+            Pineapple.setChecked(true);
+        } else if(pizzaType.equals("pepperoni")){
+            flavour = "Pepperoni";
             pizzaImage.setImageResource(R.drawable.pepperonipizza);
+            Pepperoni.setChecked(true);
         }
     }
     public void counter(View view) {
@@ -207,9 +212,31 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         finish();
     }
 //
+
+    public void selectSize(View view) {
+        int i=0;
+        long l=0;
+        Pizza temp = pizzaMaker.createPizza(this.flavour);
+        counter(view);
+
+        if(i==0){
+            temp.setSize(Size.small);
+        }
+        if(i==1){
+            temp.setSize(Size.medium);
+        }
+        if(i==2){
+            temp.setSize(Size.large);
+        }
+        addToppings(temp);
+        curPizza= temp;
+        pizzaPrice.setText(String.valueOf(Math.round(temp.price() * roundHundredPlace) / roundHundredPlace));
+
+    }
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         Pizza temp = pizzaMaker.createPizza(this.flavour);
+        counter(view);
 
         if(i==0){
             temp.setSize(Size.small);
