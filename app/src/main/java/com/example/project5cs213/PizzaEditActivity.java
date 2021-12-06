@@ -21,7 +21,6 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
 
     private ImageView pizzaImage;
     private TextView pizzaPrice;
-
     private CheckBox BlackOlives;
     private CheckBox Ham;
     private CheckBox Mushroom;
@@ -30,7 +29,6 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
     private CheckBox Pepperoni;
     private CheckBox Pineapple;
     private CheckBox Sausage;
-
     private Spinner sizeSelect;
 
     private static double roundHundredPlace=100.0;

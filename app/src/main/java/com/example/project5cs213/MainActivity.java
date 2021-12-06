@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private static Pizza curPizza;
     private static int curPhoneNumber;
 
+
     private static int lengthPhoneNumber=10;
 
     @Override
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         editTextPhone = findViewById(R.id.editTextPhone);
+        setTitle("Pizza Parlor Main Menu");
 
     }
 
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivityForResult(intent, ORDERACTIVITY_ACTIVITY_REQUEST_CODE);
             }
         }
+
     }
 
     public boolean numberChecker(String t){

@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,8 @@ public class OrderActivity extends AppCompatActivity {
     private TextView subtotal;
     private TextView salesTaxLabel;
     private TextView ordertotal;
+    private TextView orderCustomerNumberView;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +54,12 @@ public class OrderActivity extends AppCompatActivity {
         subtotal = findViewById(R.id.subtotalText);
         salesTaxLabel = findViewById(R.id.salesTaxText);
         ordertotal = findViewById(R.id.ordertotal);
+        orderCustomerNumberView = findViewById(R.id.orderCustomerNumberView);
 
         subtotal.setText(String.format("%,.2f", order.getTotal()));
         salesTaxLabel.setText(String.format("%,.2f", order.getSalesTax()));
         ordertotal.setText(String.format("%,.2f", order.getOrderTotal()));
+
 
         orderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -65,6 +70,7 @@ public class OrderActivity extends AppCompatActivity {
                 subtotal.setText(String.format("%,.2f", order.getTotal()));
                 salesTaxLabel.setText(String.format("%,.2f", order.getSalesTax()));
                 ordertotal.setText(String.format("%,.2f", order.getOrderTotal()));
+
             }
         });
     }
