@@ -12,13 +12,13 @@
             android:layout_height="wrap_content" android:id="@+id/deluxeView"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.212" app:layout_constraintVertical_bias="0.358"/>
+            app:layout_constraintHorizontal_bias="0.212" app:layout_constraintVertical_bias="0.396"/>
     <ImageButton
             android:background="@drawable/deluxepizza"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.09" android:layout_height="172dp" android:layout_width="213dp"
-            app:layout_constraintVertical_bias="0.148" android:id="@+id/orderDeluxeButton"/>
+            app:layout_constraintVertical_bias="0.196" android:id="@+id/orderDeluxeButton"/>
     <ImageButton
             android:background="@drawable/hawaiianpizza"
             android:layout_height="147dp"
@@ -87,5 +87,10 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.806"
             app:layout_constraintVertical_bias="0.787"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView8" tools:layout_editor_absoluteY="79dp"
+            tools:layout_editor_absoluteX="91dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
