@@ -49,6 +49,7 @@ public class OrderActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 your_array_list );
         orderListView.setAdapter(arrayAdapter);
+        setTitle("Orders");
 
 
         subtotal = findViewById(R.id.subtotalText);

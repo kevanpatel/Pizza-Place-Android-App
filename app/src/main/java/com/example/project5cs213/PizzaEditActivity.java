@@ -65,6 +65,7 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         Sausage = findViewById(R.id.sausageButton);
 
         pizzaPrice = findViewById(R.id.pizzaPrice);
+        setTitle("Pizza Editor");
 
 
 
