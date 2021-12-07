@@ -57,7 +57,7 @@ public class OrderActivity extends AppCompatActivity {
         subtotal = findViewById(R.id.subtotalText);
         salesTaxLabel = findViewById(R.id.salesTaxText);
         ordertotal = findViewById(R.id.ordertotal);
-        orderCustomerNumberView = findViewById(R.id.orderCustomerNumberView);
+     //   orderCustomerNumberView = findViewById(R.id.orderCustomerNumberView);
 
         subtotal.setText(String.format("%,.2f", order.getTotal()));
         salesTaxLabel.setText(String.format("%,.2f", order.getSalesTax()));

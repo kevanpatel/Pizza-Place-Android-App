@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int PIZZAEDIT_ACTIVITY_REQUEST_CODE = 0;
     private static final int ORDERACTIVITY_ACTIVITY_REQUEST_CODE = 1;
+    private static final int STOREORDER_ACTIVITY_REQUEST_CODE = 2;
 
     private static final int updatecode = 9;
     private static final int paycode = 10;
@@ -135,6 +136,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onStoreOrderClick(View view){
+        if(storeOrders== null){
+            Toast.makeText(getApplicationContext(),"No store orders" ,Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Intent intent = new Intent(this, StoreOrderActivity.class);
+
+        intent.putExtra("StoreOrder", storeOrders);
+        startActivityForResult(intent, STOREORDER_ACTIVITY_REQUEST_CODE);
+
+    }
+
     public boolean numberChecker(String t){
         String num =  t;
         if(num.length() == 10){
@@ -233,6 +246,10 @@ public class MainActivity extends AppCompatActivity {
                 curOrder = (Order) data.getSerializableExtra("curOrder");
                 storeOrders.addOrder(curOrder);
             }
+        }
+        if (requestCode == STOREORDER_ACTIVITY_REQUEST_CODE) {
+            storeOrders = (StoreOrders) data.getSerializableExtra("curStoreOrder");
+
         }
     }
 }

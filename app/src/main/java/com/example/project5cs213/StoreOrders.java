@@ -3,6 +3,7 @@ package com.example.project5cs213;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  * class to store orders
  */
 
-public class StoreOrders {
+public class StoreOrders implements Serializable {
     /**
      * Creating arraylist
      */
