@@ -5,32 +5,32 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="179dp"
-            android:layout_height="19dp"
-            android:text="    Customer Phone Number:"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.071"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.094" />
+                android:id="@+id/textView2"
+                android:layout_width="179dp"
+                android:layout_height="19dp"
+                android:text="    Customer Phone Number:"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.094"/>
 
         <TextView
-            android:id="@+id/phoneNumberText"
-            android:layout_width="190dp"
-            android:layout_height="19dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.73"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.094" />
+                android:id="@+id/phoneNumberText"
+                android:layout_width="190dp"
+                android:layout_height="19dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.73"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.094"/>
 
         <ListView
                 android:id="@+id/orderListView"
@@ -42,119 +42,102 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
-                app:layout_constraintVertical_bias="0.236"/>
+                app:layout_constraintVertical_bias="0.103"/>
 
         <TextView
                 android:id="@+id/textView10"
                 android:layout_width="69dp"
                 android:layout_height="21dp"
-                android:layout_marginTop="51dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="208dp"
                 android:text="Subtotal: $"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/subtotalText"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/orderListView"
-                app:layout_constraintVertical_bias="0.409"/>
+                android:layout_marginEnd="20dp" android:layout_marginRight="20dp" android:layout_marginTop="38dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.671"
+                app:layout_constraintTop_toTopOf="parent"/>
         <TextView
                 android:id="@+id/subtotalText"
                 android:layout_width="107dp"
                 android:layout_height="21dp"
-                android:layout_marginTop="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="38dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.726"
+                app:layout_constraintVertical_bias="0.671" app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="Sales Tax:$"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.322"
+                app:layout_constraintHorizontal_bias="0.373"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.743" app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                app:layout_constraintVertical_bias="0.006"/>
         <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:text="Sales Tax:$"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10"
-            app:layout_constraintVertical_bias="0.0" />
+                android:id="@+id/salesTaxText"
+                android:layout_width="110dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/subtotalText"
+                app:layout_constraintVertical_bias="0.006"/>
 
         <TextView
-            android:id="@+id/salesTaxText"
-            android:layout_width="110dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="17dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintStart_toEndOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/subtotalText"
-            app:layout_constraintVertical_bias="0.005" />
-
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:text="Order Total: $"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                app:layout_constraintVertical_bias="0.0" app:layout_constraintEnd_toStartOf="@+id/ordertotal"
+                android:layout_marginEnd="4dp" android:layout_marginRight="4dp" android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/updateButton"/>
         <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
-            android:text="Order Total: $"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/ordertotal"
-            android:layout_width="114dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.285"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/salesTaxText"
-            app:layout_constraintVertical_bias="0.0" />
-
+                android:id="@+id/ordertotal"
+                android:layout_width="114dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.652"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/salesTaxText"
+                app:layout_constraintVertical_bias="0.0" android:layout_marginBottom="27dp"
+                app:layout_constraintBottom_toTopOf="@+id/orderPizzaButton"/>
         <Button
                 android:id="@+id/orderPizzaButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="242dp"
-                android:layout_marginLeft="242dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="36dp"
-                android:layout_marginRight="36dp"
                 android:onClick="onButtonClick"
                 android:text="Order Pizza"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.857"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.14" app:layout_constraintTop_toBottomOf="@+id/orderListView"/>
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="58dp"
+                app:layout_constraintHorizontal_bias="0.756" app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/salesTaxText"/>
         <Button
                 android:id="@+id/updateButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="250dp"
-                android:layout_marginLeft="250dp"
-                android:layout_marginTop="517dp"
-                android:layout_marginEnd="67dp"
-                android:layout_marginRight="67dp"
-                android:layout_marginBottom="166dp"
+                android:layout_width="132dp"
+                android:layout_height="70dp"
                 android:onClick="updateOrder"
                 android:text="Update/Remove Pizza"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.302"
-                app:layout_constraintVertical_bias="0.762" app:layout_constraintBottom_toTopOf="@+id/orderPizzaButton"
-                app:layout_constraintTop_toBottomOf="@+id/orderListView"/>
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="42dp"
+                android:layout_marginRight="42dp" android:layout_marginTop="46dp"
+                app:layout_constraintHorizontal_bias="0.608"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintEnd_toStartOf="@+id/orderPizzaButton"
+                app:layout_constraintTop_toBottomOf="@+id/textView12"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

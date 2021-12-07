@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected ArrayList<Order> unpaidOrders = new ArrayList<Order>();
 
     private static Pizza curPizza;
-    private static int curPhoneNumber;
+    private static String curPhoneNumber;
 
 
     private static int lengthPhoneNumber=10;
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         }
-        if(curOrder== null || curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
-            curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
+        if(curOrder== null || curPhoneNumber!=editTextPhone.getText().toString()){
+            curPhoneNumber = editTextPhone.getText().toString();
             curOrder=new Order();
             curOrder.setPhoneNumber(editTextPhone.getText().toString());
         }
@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         }
-        if(curOrder== null|| curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
-            curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
+        if(curOrder== null || curPhoneNumber!=editTextPhone.getText().toString()){
+            curPhoneNumber = editTextPhone.getText().toString();
             curOrder=new Order();
             curOrder.setPhoneNumber(editTextPhone.getText().toString());
         }
@@ -92,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         }
-        if(curOrder== null|| curPhoneNumber!=Integer.parseInt(editTextPhone.getText().toString())){
-            curPhoneNumber = Integer.parseInt(editTextPhone.getText().toString());
+        if(curOrder== null || curPhoneNumber!=editTextPhone.getText().toString()){
+            curPhoneNumber = editTextPhone.getText().toString();
             curOrder=new Order();
             curOrder.setPhoneNumber(editTextPhone.getText().toString());
         }
