@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                     if(order.getPhoneNumber().equals(curOrder.getPhoneNumber())){
                         iterator.remove();
                         unpaidOrders.add(curOrder);
-                        Toast.makeText(getApplicationContext(),getApplicationContext().getText(R.string.order_added),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getApplicationContext().getText(R.string.order_updated),Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
