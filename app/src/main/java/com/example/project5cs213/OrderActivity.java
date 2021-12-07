@@ -1,4 +1,8 @@
 package com.example.project5cs213;
+/**
+ * @author Kevan Patel
+ * @author Manav Patel
+ */
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +21,9 @@ import java.util.List;
 
 public class OrderActivity extends AppCompatActivity {
 
+    /**
+     * create variables
+     */
     private ListView orderListView;
     private static Order order;
 
@@ -29,7 +36,10 @@ public class OrderActivity extends AppCompatActivity {
     private static final int paycode = 10;
     private TextView getNumber;
 
-
+    /**
+     * code to be executed on creation
+     * @param savedInstanceState to be saved
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -70,6 +80,13 @@ public class OrderActivity extends AppCompatActivity {
         getNumber.setText(number);
 
         orderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * code to be executed on item click
+             * @param parent to be grabbed
+             * @param view to be shown
+             * @param position of edits
+             * @param id of items
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 your_array_list.remove(position);
@@ -83,11 +100,11 @@ public class OrderActivity extends AppCompatActivity {
             }
         });
     }
-
+    /**
+     * code to be executed when updating order
+     * @param view
+     */
     public void updateOrder(View view) {
-
-
-
         // Put the String to pass back into an Intent and close this activity
         Intent intent = new Intent();
         intent.putExtra("curOrder",  order);
@@ -95,11 +112,11 @@ public class OrderActivity extends AppCompatActivity {
         finish();
     }
 
-
+    /**
+     * code to be executed on button click
+     * @param view
+     */
     public void onButtonClick(View view) {
-
-
-
         // Put the String to pass back into an Intent and close this activity
         Intent intent = new Intent();
         intent.putExtra("curOrder",  order);
