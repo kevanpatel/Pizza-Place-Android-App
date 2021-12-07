@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(this, PizzaEditActivity.class);
         String pizzaType = "pepperoni";
-        intent.putExtra("phonenumber",editTextPhone.getText().toString());
         intent.putExtra("PIZZA", pizzaType);
         if(editTextPhone.getText()!=null){
         if(numberChecker(editTextPhone.getText().toString()))
@@ -144,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 if(o.getPhoneNumber().equals(editTextPhone.getText().toString())){
                     Intent intent = new Intent(this, OrderActivity.class);
 
+                    intent.putExtra("phonenumber",editTextPhone.getText().toString());
 
                     intent.putExtra("curOrder", o);
                     intent.putExtra("phoneNumber", o.getPhoneNumber());
@@ -167,12 +167,12 @@ public class MainActivity extends AppCompatActivity {
         if(storeOrders== null){
             Toast.makeText(getApplicationContext(),"No store orders" ,Toast.LENGTH_SHORT).show();
             return;
-        }
+        }else{
         Intent intent = new Intent(this, StoreOrderActivity.class);
 
         intent.putExtra("StoreOrder", storeOrders);
         startActivityForResult(intent, STOREORDER_ACTIVITY_REQUEST_CODE);
-
+        }
     }
 
     /**
@@ -265,8 +265,11 @@ public class MainActivity extends AppCompatActivity {
                 storeOrders.addOrder(curOrder);
             }
         }
+        try{
         if (requestCode == STOREORDER_ACTIVITY_REQUEST_CODE) {
             storeOrders = (StoreOrders) data.getSerializableExtra("curStoreOrder");
+
+        }}catch(Exception e){
 
         }
     }

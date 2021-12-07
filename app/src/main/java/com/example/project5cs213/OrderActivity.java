@@ -7,15 +7,8 @@ package com.example.project5cs213;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.ListView;
-import android.widget.TextView;
-
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,8 +23,6 @@ public class OrderActivity extends AppCompatActivity {
     private TextView subtotal;
     private TextView salesTaxLabel;
     private TextView ordertotal;
-    private TextView orderCustomerNumberView;
-
     private static final int updatecode = 9;
     private static final int paycode = 10;
     private TextView getNumber;
@@ -42,17 +33,11 @@ public class OrderActivity extends AppCompatActivity {
      */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.store_view);
-
         orderListView = findViewById(R.id.orderListView);
-
         Intent intent = getIntent();
-
         order = (Order) intent.getSerializableExtra("curOrder");
-
         List<String> your_array_list = new ArrayList<String>();
-
         for (Pizza p : order.pizzas) {
             your_array_list.add(p.toString());
             }
@@ -63,18 +48,12 @@ public class OrderActivity extends AppCompatActivity {
                 your_array_list );
         orderListView.setAdapter(arrayAdapter);
         setTitle("Orders");
-
-
         subtotal = findViewById(R.id.subtotalText);
         salesTaxLabel = findViewById(R.id.salesTaxText);
         ordertotal = findViewById(R.id.ordertotal);
-     ///   orderCustomerNumberView = findViewById(R.id.orderCustomerNumberView);
-
         subtotal.setText(String.format("%,.2f", order.getTotal()));
         salesTaxLabel.setText(String.format("%,.2f", order.getSalesTax()));
         ordertotal.setText(String.format("%,.2f", order.getOrderTotal()));
-
-
         getNumber =  findViewById(R.id.phoneNumberText);
         String number = intent.getStringExtra("phonenumber");
         getNumber.setText(number);
