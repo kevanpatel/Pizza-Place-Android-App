@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private static StoreOrders storeOrders = new StoreOrders();
     protected ArrayList<Order> unpaidOrders = new ArrayList<Order>();
     private static Pizza curPizza;
-    private static String curPhoneNumber;
+    private static long curPhoneNumber;
 
     /**
      * code to run when project is run
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         }
-        if(curOrder== null || curPhoneNumber!=editTextPhone.getText().toString()){
-            curPhoneNumber = editTextPhone.getText().toString();
+        if(curOrder== null || curPhoneNumber!=Long.parseLong( editTextPhone.getText().toString())){
+            curPhoneNumber =Long.parseLong( editTextPhone.getText().toString());
             curOrder=new Order();
             curOrder.setPhoneNumber(editTextPhone.getText().toString());
         }
@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         }
-        if(curOrder== null || curPhoneNumber!=editTextPhone.getText().toString()){
-            curPhoneNumber = editTextPhone.getText().toString();
+        if(curOrder== null || curPhoneNumber!=Long.parseLong( editTextPhone.getText().toString())){
+            curPhoneNumber =Long.parseLong( editTextPhone.getText().toString());
             curOrder=new Order();
             curOrder.setPhoneNumber(editTextPhone.getText().toString());
         }
@@ -111,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         }
-        if(curOrder== null || curPhoneNumber!=editTextPhone.getText().toString()){
-            curPhoneNumber = editTextPhone.getText().toString();
+        if(curOrder== null || curPhoneNumber!=Long.parseLong( editTextPhone.getText().toString())){
+            curPhoneNumber =Long.parseLong( editTextPhone.getText().toString());
             curOrder=new Order();
             curOrder.setPhoneNumber(editTextPhone.getText().toString());
         }

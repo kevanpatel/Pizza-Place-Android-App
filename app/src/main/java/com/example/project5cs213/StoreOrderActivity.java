@@ -35,6 +35,7 @@ public class StoreOrderActivity extends AppCompatActivity implements AdapterView
         setContentView(R.layout.order_view);
         Intent intent = getIntent();
         storeOrders = (StoreOrders) intent.getSerializableExtra("StoreOrder");
+
         for(Order o:storeOrders.orders){
             phoneNumbers.add(o.getPhoneNumber());
         }
@@ -46,6 +47,8 @@ public class StoreOrderActivity extends AppCompatActivity implements AdapterView
         //Setting the ArrayAdapter data on the Spinner
         spinner.setAdapter(aa);
         listView = findViewById(R.id.orderDisplay);
+        setTitle("Store Order");
+
         if(storeOrders==null){
             List<String> your_array_list = new ArrayList<String>();
             your_array_list.add("NO STORE ORDERS");
@@ -63,12 +66,14 @@ public class StoreOrderActivity extends AppCompatActivity implements AdapterView
      * @param view to be saved
      */
     public void onButtonClick(View view) {
+        try{
          storeOrders.orders.remove(numSelected);
         // Put the String to pass back into an Intent and close this activity
         Intent intent = new Intent();
         intent.putExtra("curStoreOrder",  storeOrders);
         setResult(RESULT_OK, intent);
-        finish();
+        finish();}
+        catch (Exception e){}
     }
 
     /**
