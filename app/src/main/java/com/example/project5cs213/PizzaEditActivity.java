@@ -1,4 +1,8 @@
 package com.example.project5cs213;
+/**
+ * @author Kevan Patel
+ * @author Manav Patel
+ */
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +14,15 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * class that runs when editing pizza
+ */
 public class PizzaEditActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-
+    /**
+     * creating variables
+     */
     private ImageView pizzaImage;
     private TextView pizzaPrice;
     private CheckBox BlackOlives;
@@ -26,31 +34,22 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
     private CheckBox Pineapple;
     private CheckBox Sausage;
     private Spinner sizeSelect;
-
-    private TextView getNumber;
-
     private static double roundHundredPlace=100.0;
-
     PizzaMaker pizzaMaker = new PizzaMaker();
     private String flavour = "Deluxe";
     Pizza curPizza;
-
-
     String[] sizes={"Small","Medium","Large"};
 
-
+    /**
+     * method to be run on start
+     * @param savedInstanceState to be saved
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.pizza_order);
-
-
-
         Intent intent = getIntent();
-
         String pizzaType = intent.getStringExtra("PIZZA");
-
         //find all the ids
         pizzaImage = findViewById(R.id.pizzaImage);
         BlackOlives = findViewById(R.id.blackOlivesButton);
@@ -61,13 +60,8 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         Pepperoni = findViewById(R.id.pepperoniButton);
         Pineapple = findViewById(R.id.pineappleButton);
         Sausage = findViewById(R.id.sausageButton);
-
         pizzaPrice = findViewById(R.id.pizzaPrice);
         setTitle("Pizza Editor");
-
-        getNumber =  findViewById(R.id.phoneNumberText);
-        String number = intent.getStringExtra("phonenumber");
-
         //spinner
         sizeSelect = findViewById(R.id.sizeSelect);
         sizeSelect.setOnItemSelectedListener (this);
@@ -76,10 +70,6 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         sizeSelect.setAdapter(aa);
-
-
-
-
         if(pizzaType.equals("deluxe")){
             flavour = "Deluxe";
             pizzaImage.setImageResource(R.drawable.deluxepizza);
@@ -99,6 +89,11 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
             Pepperoni.setChecked(true);
         }
     }
+
+    /**
+     * counter to check if count of toppings is correct
+     * @param view to be saved
+     */
     public void counter(View view) {
         int count=0;
         if (Pepperoni.isChecked()) {
@@ -165,7 +160,11 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         }
     }
 
-
+    /**
+     * method to add pizza
+     * @param pizza to be added
+     * @return pizza
+     */
     public Pizza addToppings(Pizza pizza) {
         if (Pepperoni.isChecked()) {
             pizza.toppings.add(Topping.Pepperoni);
@@ -196,22 +195,23 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         return pizza;
     }
 
-
+    /**
+     * code to be executed on button blick
+     * @param view to be saved
+     */
     public void onButtonClick(View view) {
-
-
-
         // Put the String to pass back into an Intent and close this activity
         Intent intent = new Intent();
         intent.putExtra("curPizza",  curPizza);
         Toast.makeText(getApplicationContext(),getApplicationContext().getString(R.string.order_added) ,Toast.LENGTH_SHORT).show();
         setResult(RESULT_OK, intent);
-
-
         finish();
     }
-//
 
+    /**
+     * method to selectsize of pizza
+     * @param view to be saved
+     */
     public void selectSize(View view) {
         int i=0;
         long l=0;
@@ -232,6 +232,14 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         pizzaPrice.setText(String.valueOf(Math.round(temp.price() * roundHundredPlace) / roundHundredPlace));
 
     }
+
+    /**
+     * code to be executed based on spinner selection
+     * @param adapterView shown
+     * @param view to be saved
+     * @param i to represent each choice
+     * @param l to be used
+     */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         Pizza temp = pizzaMaker.createPizza(this.flavour);
@@ -250,11 +258,13 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         curPizza= temp;
         pizzaPrice.setText(String.valueOf(Math.round(temp.price() * roundHundredPlace) / roundHundredPlace));
 
-       // Toast.makeText(getApplicationContext(), sizes[i], Toast.LENGTH_LONG).show();
-        //counter(view);
 
     }
 
+    /**
+     * code the execute if nothing is selected
+     * @param adapterView
+     */
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 

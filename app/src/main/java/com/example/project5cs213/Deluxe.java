@@ -4,8 +4,6 @@ package com.example.project5cs213;
  * @author Manav Patel
  */
 
-import android.os.Parcel;
-import android.os.Parcelable;
 
 import java.io.Serializable;
 
