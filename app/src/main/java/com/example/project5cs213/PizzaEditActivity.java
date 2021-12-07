@@ -2,15 +2,11 @@ package com.example.project5cs213;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.Checkable;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +26,8 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
     private CheckBox Pineapple;
     private CheckBox Sausage;
     private Spinner sizeSelect;
+
+    private TextView getNumber;
 
     private static double roundHundredPlace=100.0;
 
@@ -67,9 +65,8 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         pizzaPrice = findViewById(R.id.pizzaPrice);
         setTitle("Pizza Editor");
 
-
-
-
+        getNumber =  findViewById(R.id.phoneNumberText);
+        String number = intent.getStringExtra("phonenumber");
 
         //spinner
         sizeSelect = findViewById(R.id.sizeSelect);

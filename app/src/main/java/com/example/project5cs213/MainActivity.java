@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, PizzaEditActivity.class);
         String pizzaType = "deluxe";
+        intent.putExtra("phonenumber",editTextPhone.getText().toString());
+
         intent.putExtra("PIZZA", pizzaType);
         if(editTextPhone.getText()!=null){
             if(numberChecker(editTextPhone.getText().toString()))
@@ -79,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(this, PizzaEditActivity.class);
         String pizzaType = "hawaiian";
+        intent.putExtra("phonenumber",editTextPhone.getText().toString());
+
         intent.putExtra("PIZZA", pizzaType);
         if(editTextPhone.getText()!=null) {
             if (numberChecker(editTextPhone.getText().toString()))
@@ -100,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(this, PizzaEditActivity.class);
         String pizzaType = "pepperoni";
+        intent.putExtra("phonenumber",editTextPhone.getText().toString());
         intent.putExtra("PIZZA", pizzaType);
         if(editTextPhone.getText()!=null){
         if(numberChecker(editTextPhone.getText().toString()))
@@ -211,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Get String data from Intent
                 curOrder = (Order) data.getSerializableExtra("curOrder");
+
                 if(unpaidOrders.isEmpty()){
                     unpaidOrders.add(curOrder);
 
