@@ -27,6 +27,7 @@ public class OrderActivity extends AppCompatActivity {
 
     private static final int updatecode = 9;
     private static final int paycode = 10;
+    private TextView getNumber;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,10 @@ public class OrderActivity extends AppCompatActivity {
         salesTaxLabel.setText(String.format("%,.2f", order.getSalesTax()));
         ordertotal.setText(String.format("%,.2f", order.getOrderTotal()));
 
+
+        getNumber =  findViewById(R.id.phoneNumberText);
+        String number = intent.getStringExtra("phonenumber");
+        getNumber.setText(number);
 
         orderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

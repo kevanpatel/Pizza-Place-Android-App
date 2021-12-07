@@ -27,7 +27,6 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
     private CheckBox Sausage;
     private Spinner sizeSelect;
 
-    private TextView getNumber;
 
     private static double roundHundredPlace=100.0;
 
@@ -65,8 +64,9 @@ public class PizzaEditActivity extends AppCompatActivity implements AdapterView.
         pizzaPrice = findViewById(R.id.pizzaPrice);
         setTitle("Pizza Editor");
 
-        getNumber =  findViewById(R.id.phoneNumberText);
-        String number = intent.getStringExtra("phonenumber");
+
+
+
 
         //spinner
         sizeSelect = findViewById(R.id.sizeSelect);
